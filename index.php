@@ -29,3 +29,5 @@ $palindrome->calculatePalindrome($rangeEnd, $rangeBegin);
 
 $isCli or print"<pre>\n";
 print_r($palindrome->printReport());
+
+// this is a change
