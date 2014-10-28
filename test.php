@@ -282,3 +282,5 @@ $test->testInsertCandidate();
 $test->testGetNextCandidate();
 $test->testIsPalindrome();
 $test->testCalculatePalindrome();
+
+// some change
