@@ -1,0 +1,63 @@
+<?php
+/**
+ * Astronomical Algorithms UI
+ *
+ * @author    Michel Corne <mcorne@yahoo.com>
+ * @copyright 2012 Michel Corne
+ * @license   http://opensource.org/licenses/mit-license.php MIT
+ */
+
+/*
+ * Displays the algorithm tests results
+ */
+?>
+
+<div class="section">
+
+  <h2 class="result">Results</h2>
+
+    <table class="test">
+
+      <tr>
+        <th></th>
+        <th>Success</th>
+        <th>Failure</th>
+        <th>Not tested</th>
+        </tr>
+
+      <?php foreach($_tests['results'] as $algorithm => $result):?>
+       <tr>
+
+         <td class="name"><a href="<?="$_site_url";?>?command=calculate&&algorithm=<?=$algorithm;?>"><?=$algorithm;?></a> ( )</td>
+
+           <?php if (empty($result)):?>
+             <td></td>
+             <td></td>
+             <td class="number"><span class="warning">1</span></td>
+
+           <?php else:?>
+             <td class="number"><span <?php if($result['failures'] == 0):?>class="success"<?php endif;?>><?=$result['successes'];?></span></td>
+             <td class="number"><span <?php if($result['failures'] != 0):?>class="error"<?php endif;?>><?=$result['failures'];?></span></td>
+             <td></td>
+           <?php endif;?>
+
+           <td class="link"><a href="<?="$_site_url";?>?command=test&run=1&algorithm=<?=$algorithm;?>">Test</a></td>
+
+         </tr>
+      <?php endforeach;?>
+
+        <tr>
+
+         <td class="total name">Total</td>
+
+         <td class="total number"><span <?php if($_tests['failures'] == 0):?>class="success"<?php endif;?>><?=$_tests['successes'];?></span></td>
+
+         <td class="total number"><span <?php if($_tests['failures'] != 0):?>class="error"<?php endif;?>><?=$_tests['failures'];?></span></td>
+
+         <td class="total number"><span <?php if($_tests['missing'] != 0):?>class="warning"<?php endif;?>><?=$_tests['missing'];?></span></td>
+
+       </tr>
+
+  </table>
+
+</div>

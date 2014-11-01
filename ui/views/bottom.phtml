@@ -1,0 +1,53 @@
+<?php
+/**
+ * Astronomical Algorithms UI
+ *
+ * @author    Michel Corne <mcorne@yahoo.com>
+ * @copyright 2012 Michel Corne
+ * @license   http://opensource.org/licenses/mit-license.php MIT
+ */
+
+/*
+ * Displays the bottom bar
+ */
+?>
+
+<div>
+
+  <div class="link">
+
+    <a href="<?="$_site_url";?>">Home</a>
+
+    <a href="<?="$_site_url";?>?command=options">Options</a>
+
+    <a href="http://code.google.com/p/astronomical-algorithms/source/browse/trunk/api/<?=isset($_filename)? $_filename : null;?>">API</a>
+
+    <a href="https://code.google.com/p/astronomical-algorithms/downloads/list">Download</a>
+
+    <?php if (isset($_algorithm)):?>
+        <a href="<?="$_site_url";?>?command=test&algorithm=<?=$_algorithm;?>">Test</a>
+    <?php else:?>
+        <a href="<?="$_site_url";?>?command=tests">Test</a>
+    <?php endif;?>
+
+    <a href="mailto:mcorne@yahoo.com?subject=Ask%20a%20question%20-%20Make%20a%20comment%20-%20Report%20a%20problem">Help</a>
+
+  </div>
+
+  <div id="copyright">
+
+    <a href="http://creativecommons.org/licenses/by-nc-nd/2.0/fr/" rel="license">
+      <img alt="Creative Commons License"
+       src="http://i.creativecommons.org/l/by-nc-nd/2.0/fr/80x15.png" /></a>
+
+    <span>2012</span>
+    <a href="http://www.micmap.org/">Michel Corne</a>
+
+  </div>
+
+  <div id="powered-by">
+     Powered by PHP <?=PHP_VERSION;?>
+     (<?=display_time((microtime(true) - $_time));?> s)
+  </div>
+
+</div>

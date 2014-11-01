@@ -1,0 +1,29 @@
+<?php
+/**
+ * Astronomical Algorithms UI
+ *
+ * @author    Michel Corne <mcorne@yahoo.com>
+ * @copyright 2012 Michel Corne
+ * @license   http://opensource.org/licenses/mit-license.php MIT
+ */
+
+/*
+ * Displays the test results of the algorithms
+ */
+?>
+
+<div class="section">
+
+  <h1 class="result">Test of the algorithms</h1>
+
+  <form class="section" action="<?="$_site_url";?>" method="post">
+    <input type="hidden" name="command" value="tests" />
+
+    <div>
+      <button class="button-run" type="submit" name="run" value="1">Run the tests</button>
+    </div>
+  </form>
+
+  <?php isset($_tests) and require "tests-result.phtml";?>
+
+</div>

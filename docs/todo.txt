@@ -1,0 +1,10 @@
+- fix julian day algorithms to allow for hours, minutes ans seconds
+- add date, plus info on leap year, easter date etc... in home page
+- add notices, eg for properties saved in a browser session etc...
+- add a more readable list of algorithms with options to display by name, title, groups
+- add AA icon
+- add @see to propose other algorithms
+- add code coverage
+- add user comments form
+- add algorithm search
+- add translations

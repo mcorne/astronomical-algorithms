@@ -1,0 +1,36 @@
+<?php
+/**
+ * Astronomical Algorithms UI
+ *
+ * @author    Michel Corne <mcorne@yahoo.com>
+ * @copyright 2012 Michel Corne
+ * @license   http://opensource.org/licenses/mit-license.php MIT
+ */
+
+/*
+ * Displays the home page
+ */
+?>
+
+<h1>Astronomical Algorithms</h1>
+
+<p>
+  <div>This web site implements the astronomical algorithms described by Jean Meeus in his book:</div>
+  <div>
+    <a href="http://www.willbell.com/math/mc1.htm">Astronomical Algorithms</a>,
+    2nd English Edition, Willmann-Bell, Inc., Richmond, Virginia, 1998, 2005.
+  </div>
+</p>
+
+<p>
+  <div>The algorithms are implemented in PHP.</div>
+  <div>The simple user interface is primarily designed for developpers who wish to use the API.</div>
+</p>
+
+<p>
+  <div>The development of these algorithms is a work in progress.</div>
+  <div>
+    <a href="<?="$_site_url";?>?command=calculate&algorithm=aa_get_algorithms">List of the available algorithms</a>
+     (<?=count($_algorithms) - 1;?>)
+  </div>
+</p>

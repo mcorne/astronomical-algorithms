@@ -1,0 +1,344 @@
+/**
+ * Astronomical Algorithms UI
+ *
+ * @author    Michel Corne <mcorne@yahoo.com>
+ * @copyright 2012 Michel Corne
+ * @license   http://opensource.org/licenses/mit-license.php MIT
+ */
+
+body
+{
+    font-family: arial, Lucida Console;
+    font-size: .8em;
+    margin: .8em 1.3em 0 1em;
+}
+
+a.logo
+{
+	color: gray;
+    font-weight: bold;
+    text-decoration: none;
+    vertical-align: middle;
+}
+
+a.logo span.initial
+{
+	color: blue;
+    font-size : 2em;
+}
+
+button.button-calculate, button.button-run
+{
+    border-color: darkgreen;
+    border-style: solid;
+    border-width: 1px;
+    background-color: green;
+    color: white;
+    font-weight: bold;
+    font-size: 1.25em;
+    margin-top: .5em;
+}
+
+button.button-save
+{
+    border-color: darkred;
+    border-style: solid;
+    border-width: 1px;
+    background-color: red;
+    color: white;
+    font-weight: bold;
+    font-size: 1.25em;
+    margin-top: 1em;
+}
+
+button.button-select
+{
+    border-color: darkblue;
+    border-style: solid;
+    border-width: 1px;
+    background-color: blue;
+    color: white;
+    font-weight: bold;
+    font-size: 1.25em;
+    margin-left: .5em;
+    margin-right: 1em;
+    vertical-align: middle;
+}
+
+button.button-calculate:hover, button.button-run:hover, button.button-save:hover, button.button-select:hover
+{
+    background-color: orange;
+    border-color: darkorange;
+}
+
+div.description
+{
+    margin-top: 1em;
+}
+
+div.link
+{
+    margin: 2em 0 .5em 0;
+}
+
+div.link a
+{
+    margin-right: .3em;
+}
+
+div.option
+{
+    margin-top: 1em;
+}
+
+div.options-saved
+{
+    color: green;
+    margin-top: 1em;
+}
+
+div.section, form.section
+{
+	margin-top: 1.8em;
+}
+
+h1
+{
+    color: blue;
+    font-size: 1.5em;   
+    font-weight: bold;
+    margin: 0 0 1em 0;
+}
+
+h2
+{
+    color: blue;
+    font-size: 1.2em;   
+    font-weight: bold;
+    margin: 0 0 .2em 0;
+}
+
+h2.result
+{
+    margin: 0;
+}
+
+h3
+{
+    color: red;
+    font-size: 1em;   
+    font-weight: bold;
+    margin: 0 0 .2em 0;
+}
+
+h4
+{
+    color: black;
+    font-size: 1.1em;   
+    font-weight: bold;
+    margin: 0;
+}
+
+hr
+{
+    border: solid 1px #CCC;
+    margin-top: .8em;
+    margin-bottom: .8em;
+}
+
+img.image
+{
+    border-width: 0;
+    float: right;
+    margin: 2em 4em 1em 1em;
+}
+
+select.algorithms
+{
+    margin-left: 2em;
+    vertical-align: middle;
+}
+
+span.error
+{
+    color: red;
+	font-weight: bold;
+}
+
+span.not-important
+{
+    color: gray;
+    font-weight: bold;
+}
+
+span.success
+{
+    color: green;
+	font-weight: bold;
+}
+
+span.warning
+{
+    color: darkorange;
+    font-weight: bold;
+}
+
+span.tab
+{
+    color: white;
+}
+
+table
+{
+    border-spacing: 0 .2em;
+}
+
+table td
+{
+	padding-right: .8em;
+	padding-top: .3em;
+    vertical-align: top;
+}
+
+table.params td
+{
+    padding-top: .2em;
+}
+
+table.params td.label
+{
+	color: green;
+	font-weight: bold;
+	width: 6em;
+}
+
+table.params td.link
+{
+    width: 6em;
+}
+
+table.params td.name
+{
+    color: gray;
+	width: 8em;
+}
+
+table.params td.type
+{
+    color: gray;
+	width: 6em;
+}
+
+table.params td.type a
+{
+    color: gray;
+}
+
+table.params td.value
+{
+	padding-top: 0;
+    min-width: 12em;
+}
+
+table.params td.args
+{
+    padding-top: 0;
+    min-width: 19em; /* td.type.width + td.value.width + table.border-spacing + td.padding-right*/
+}
+
+table.params td.value input
+{
+	width: 5em;
+}
+
+table.params td.value input.numeric
+{
+    text-align: right;
+}
+
+table.test
+{
+    border-collapse:collapse;
+	margin-top: 1em;
+}
+
+table.test td
+{
+    border: 1px solid lightgray;
+    padding: .4em .8em;
+	white-space:nowrap;
+}
+
+table.test td.name
+{
+    padding-left: 0;
+	white-space:nowrap;
+}
+
+table.test td.name, table.test td.status, table.test td.link, table.test td.total
+{
+    border: none;
+}
+
+table.test td.link
+{
+    border: none;
+	white-space:nowrap;
+}
+
+table.test td.number, table.test td.total
+{
+    min-width: 5em;
+	text-align:center
+}
+
+table.test td.total
+{
+	font-weight: bold;
+}
+
+table.test td.values
+{
+    min-width: 8em;
+}
+
+table.test th
+{
+    padding: 1em .5em;
+}
+
+table.test th.label
+{
+    border: 1px solid lightgray;
+    padding: .5em .5em;
+}
+
+#copyright
+{
+    margin-top: 1em;
+    white-space: nowrap;
+}
+
+#copyright img
+{
+    border-width: 0;
+    vertical-align: -.25em;
+}
+
+#copyright a, #copyright span
+{
+    color: gray;
+    vertical-align: middle;
+}
+
+#copyright a
+{
+    color: gray;
+    text-decoration: none;
+}
+
+#powered-by
+{
+    color: gray;
+    margin-top: .5em;
+}

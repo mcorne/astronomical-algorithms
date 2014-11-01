@@ -1,0 +1,18 @@
+<?php
+/**
+ * Astronomical Algorithms UI
+ *
+ * @author    Michel Corne <mcorne@yahoo.com>
+ * @copyright 2012 Michel Corne
+ * @license   http://opensource.org/licenses/mit-license.php MIT
+ */
+
+/*
+ * Displays the algorithm title, description, parameters, result, error and examples
+ */
+
+require 'description.phtml';
+require 'params.phtml';
+isset($_result)        and require 'result.phtml';
+isset($_error_message) and require 'error.phtml';
+!empty($_examples)     and require 'examples.phtml';

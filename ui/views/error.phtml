@@ -1,0 +1,29 @@
+<?php
+/**
+ * Astronomical Algorithms UI
+ *
+ * @author    Michel Corne <mcorne@yahoo.com>
+ * @copyright 2012 Michel Corne
+ * @license   http://opensource.org/licenses/mit-license.php MIT
+ */
+
+/*
+ * Displays the algorithm error message and calls trace
+ */
+?>
+
+<div class="section">
+
+  <h3>Error message</h3>
+
+  <div><?=$_error_message;?></div>
+
+</div>
+
+<div class="section">
+
+  <h3>Calls trace</h3>
+
+  <div><?=display_backtrace($_backtrace, $_algorithm, $_source_code);?></div>
+
+</div>

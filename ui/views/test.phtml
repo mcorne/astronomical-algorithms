@@ -1,0 +1,37 @@
+<?php
+/**
+ * Astronomical Algorithms UI
+ *
+ * @author    Michel Corne <mcorne@yahoo.com>
+ * @copyright 2012 Michel Corne
+ * @license   http://opensource.org/licenses/mit-license.php MIT
+ */
+
+/*
+ * Displays the test results of an algorithm
+ */
+?>
+
+<?php require 'description.phtml';?>
+
+<div class="section">
+
+  <?php if(empty($_examples)):?>
+    <span class="warning">There is no test yet for this algorithm.</span>
+
+  <?php else:?>
+
+    <form class="section" action="<?="$_site_url";?>" method="post">
+      <input type="hidden" name="command" value="test" />
+      <input type="hidden" name="algorithm" value="<?=$_algorithm;?>" />
+
+      <div>
+        <button class="button-run" type="submit" name="run" value="1">Run the test</button>
+      </div>
+    </form>
+
+    <?php isset($_test) and require "test-result.phtml";?>
+
+  <?php endif;?>
+
+</div>

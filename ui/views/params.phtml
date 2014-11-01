@@ -1,0 +1,39 @@
+<?php
+/**
+ * Astronomical Algorithms UI
+ *
+ * @author    Michel Corne <mcorne@yahoo.com>
+ * @copyright 2012 Michel Corne
+ * @license   http://opensource.org/licenses/mit-license.php MIT
+ */
+
+/*
+ * Displays the algorithm input parameters
+ */
+?>
+
+<form class="section" action="<?="$_site_url";?>" method="post">
+
+  <input type="hidden" name="command" value="calculate" />
+  <input type="hidden" name="algorithm" value="<?=$_algorithm;?>" />
+
+  <table class="params">
+     <?php foreach($_values as $param => $value):
+             $type = get_param_type($param, $_docblock);?>
+      <tr>
+        <td class="label"><?=display_param_label($param);?></td>
+        <td class="value">
+          <input class="<?php if(is_numeric_type($type)):?>numeric<?php endif;?>" type="text" name="<?=$param;?>" value="<?=display_value_inline($value);?>"/>
+        </td>
+        <td class="type"><?=$type;?></td>
+        <td class="name">$<?=$param;?></td>
+        <td class="comment"><?=display_param_comment($param, $_docblock);?></td>
+        </tr>
+    <?php endforeach;?>
+  </table>
+
+  <div>
+    <button class="button-calculate" type="submit" name="run" value="1">Calculate</button>
+  </div>
+
+</form>

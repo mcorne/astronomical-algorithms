@@ -1,0 +1,44 @@
+<?php
+/**
+ * Astronomical Algorithms UI
+ *
+ * @author    Michel Corne <mcorne@yahoo.com>
+ * @copyright 2012 Michel Corne
+ * @license   http://opensource.org/licenses/mit-license.php MIT
+ */
+
+/*
+ * Displays the algorithm result
+ */
+
+$is_parts = (is_array($_result) and is_documented_array_type_result($_docblock));
+?>
+
+<div class="section">
+
+  <h2 class="result">Result</h2>
+
+  <table class="params">
+    <tr>
+      <td class="label"></td>
+      <td class="value"><?=$is_parts? null : display_result_value($_result, $_docblock);?></td>
+      <td class="type"><?=display_result_type($_docblock);?></td>
+      <td class="name"></td>
+      <td class="comment"><?=display_result_comment($_docblock);?></td>
+    </tr>
+
+    <?php if ($is_parts):?>
+      <tr><td></td></tr>
+      <?php foreach($_result as $index => $value):?>
+        <tr>
+          <td class="label"></td>
+          <td class="value"><?=display_value_inline($value);?></td>
+          <td class="type"><?=display_result_part_type($index, $_docblock);?></td>
+          <td class="name"></td>
+          <td class="comment"><?=display_result_part_comment($index, $_docblock);?></td>
+        </tr>
+      <?php endforeach;?>
+    <?php endif;?>
+  </table>
+
+</div>

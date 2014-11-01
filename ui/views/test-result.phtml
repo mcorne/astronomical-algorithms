@@ -1,0 +1,52 @@
+<?php
+/**
+ * Astronomical Algorithms UI
+ *
+ * @author    Michel Corne <mcorne@yahoo.com>
+ * @copyright 2012 Michel Corne
+ * @license   http://opensource.org/licenses/mit-license.php MIT
+ */
+
+/*
+ * Displays the test result of the algorithm
+ */
+?>
+
+<div class="section">
+
+  <h2 class="result">Result</h2>
+
+  <table class="test">
+
+      <tr>
+        <th></th>
+        <th class="label">Arguments</th>
+        <th class="label">Test result</th>
+        <th class="label">Expected result</th>
+      </tr>
+
+      <?php foreach($_test['results'] as $number => $result):
+                $example = $_examples[$number];?>
+       <tr>
+
+         <td class="name">Test #<?=$number;?></td>
+         <td class="values"><?= display_values_inline($example['values'], null,  "\n", null, true);?></td>
+         <td class="values"><?=display_value_inline_with_type($result);?></td>
+         <td class="values"><?=display_value_inline_with_type($example['expected-result']);?></td>
+
+         <td class="status">
+           <?php if ($example['expected-result'] === $result):?>
+             <span class="success">OK</span>
+           <?php else:?>
+             <span class="error">Erreur</span>
+           <?php endif;?>
+         </td>
+
+         <td class="link"><a href="<?="$_site_url";?>?command=calculate&run=1&example=<?=$number;?>&algorithm=<?=$_algorithm;?>">Calculate</a></td    >
+
+         </tr>
+      <?php endforeach;?>
+
+  </table>
+
+</div>

@@ -1,0 +1,82 @@
+<?php
+/**
+ * Astronomical Algorithms UI
+ *
+ * @author    Michel Corne <mcorne@yahoo.com>
+ * @copyright 2012 Michel Corne
+ * @license   http://opensource.org/licenses/mit-license.php MIT
+ */
+
+/*
+ * Displays the top bar
+ */
+
+isset($_algorithm) or $_algorithm= null;
+?>
+
+<form action="<?="$_site_url";?>" method="post">
+
+  <input type="hidden" name="command" value="calculate" />
+
+  <a  class="logo" href="<?="$_site_url";?>">
+    <span class="initial">A</span>stronomical
+    <span class="initial">A</span>lgorithms
+  </a>
+
+  <select class="algorithms" name="algorithm">
+    <option>-- Select an algorithm --</option>
+
+    <?php if($_display_algorithm_categories): // displays algorithms by category ?>
+
+      <?php foreach($_algorithms_by_category as $category => $algorithms):?>
+        <optgroup label="<?=$_algorithm_categories[$category];?>">
+
+        <?php if($_display_algorithm_descriptions): // displays algorithm descriptions ?>
+
+          <?php foreach($algorithms as $algorithm => $description):?>
+            <option value="<?=$algorithm;?>"
+                    title="<?=$algorithm;?>"
+                    <?php if($algorithm == $_algorithm):?>selected="selected"<?php endif;?>><?=$description;?></option>
+          <?php endforeach;?>
+
+        <?php else: // displays algorithm function names ?>
+
+          <?php foreach($algorithms as $algorithm => $description):?>
+            <option value="<?=$algorithm;?>"
+                    title="<?=$description;?>"
+                    <?php if($algorithm == $_algorithm):?>selected="selected"<?php endif;?>><?=$algorithm;?></option>
+          <?php endforeach;?>
+
+        <?php endif;?>
+
+      <?php endforeach;?>
+
+    <?php else: // displays algorithms without categories ?>
+
+      <?php if($_display_algorithm_descriptions): // displays algorithm descriptions ?>
+
+        <?php foreach($_algorithms as $algorithm => $description):?>
+          <option value="<?=$algorithm;?>"
+                  title="<?=$algorithm;?>"
+                  <?php if($algorithm == $_algorithm):?>selected="selected"<?php endif;?>><?=$description;?></option>
+        <?php endforeach;?>
+
+      <?php else: // displays algorithm function names ?>
+
+        <?php foreach($_algorithms as $algorithm => $description):?>
+          <option value="<?=$algorithm;?>"
+                  title="<?=$description;?>"
+                  <?php if($algorithm == $_algorithm):?>selected="selected"<?php endif;?>><?=$algorithm;?></option>
+        <?php endforeach;?>
+
+      <?php endif;?>
+
+    <?php endif;?>
+
+  </select>
+
+  <button class="button-select" type="submit">Select</button>
+
+</form>
+
+<hr />

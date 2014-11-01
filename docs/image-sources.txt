@@ -1,0 +1,8 @@
+aa-curvature-radius.jpg            => http://adamchukpa.mcgill.ca/web_ssm/pictures/web_GPS_ellipse.gif
+aa-degrees-to-dms.jpg              => http://zonalandeducation.com/mmts/trigonometryRealms/degMinSec/degMinSec1.gif
+aa-distance-between-two-points.jpg => http://dr282zn36sxxg.cloudfront.net/datastreams/f-d%3A57692a23a75f1b4d489b85c95365eaeb9d8d6f1f4129da072cb1ee02%2BIMAGE%2BIMAGE.1
+aa-get-earth-ellipsoid.jpg         => http://www.getfreeimage.com/pictures/world-globe-3d-ellipsoid-pic.jpg
+aa-nutation-in-longitude.php       => http://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Praezession.svg/500px-Praezession.svg.png
+aa-nutation-in-obliquity.php       => http://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Praezession.svg/500px-Praezession.svg.png
+aa-parallel-radius.jpg             => http://www.math.montana.edu/frankw/ccp/cases/Global-Positioning/round-earth/green.gif
+aa-set-earth-ellipsoid.jpg         => http://www.esri.com/news/arcuser/0610/graphics/nospin_4-lg.jpg

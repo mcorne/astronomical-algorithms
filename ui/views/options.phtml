@@ -1,0 +1,77 @@
+<?php
+/**
+ * Astronomical Algorithms UI
+ *
+ * @author    Michel Corne <mcorne@yahoo.com>
+ * @copyright 2012 Michel Corne
+ * @license   http://opensource.org/licenses/mit-license.php MIT
+ */
+
+/*
+ * Displays the options page
+ */
+?>
+
+<h1>Options</h1>
+
+<form class="section" action="<?="$_site_url";?>" method="post">
+
+  <input type="hidden" name="command" value="options" />
+
+  <div class="option">
+
+    <div>
+      <input type="radio" name="_aa_no_algorithm_categories" value="0"
+             <?php if($_display_algorithm_categories):?>checked="checked"<?php endif;?> />
+      <span>Display the algorithms by category in the top bar.</span>
+    </div>
+
+    <div>
+      <input type="radio" name="_aa_no_algorithm_categories" value="1"
+             <?php if(! $_display_algorithm_categories):?>checked="checked"<?php endif;?> />
+      <span>Display the list of algorithms without categories.</span>
+    </div>
+
+  </div>
+
+  <div class="option">
+
+    <div>
+      <input type="radio" name="_aa_no_algorithm_description" value="0"
+             <?php if($_display_algorithm_descriptions):?>checked="checked"<?php endif;?> />
+      <span>Display the algorithms descriptions in the top bar.</span>
+    </div>
+
+    <div>
+      <input type="radio" name="_aa_no_algorithm_description" value="1"
+             <?php if(! $_display_algorithm_descriptions):?>checked="checked"<?php endif;?> />
+      <span>Display the algorithms names in the top bar.</span>
+    </div>
+
+  </div>
+
+  <div class="option">
+
+    <div>
+      <input type="radio" name="_aa_no_image" value="0"
+             <?php if($_display_image):?>checked="checked"<?php endif;?> />
+      <span>Display images.</span>
+    </div>
+
+    <div>
+      <input type="radio" name="_aa_no_image" value="1"
+             <?php if(! $_display_image):?>checked="checked"<?php endif;?> />
+      <span>Do not display images.</span>
+    </div>
+
+  </div>
+
+  <div>
+    <button class="button-save" type="submit" name="save" value="1">Save</button>
+  </div>
+
+  <?php if (isset($_message)):?>
+    <div class="options-saved"><?=$_message;;?></div>
+  <?php endif;?>
+
+</form>

@@ -1,0 +1,43 @@
+<?php
+/**
+ * Astronomical Algorithms UI
+ *
+ * @author    Michel Corne <mcorne@yahoo.com>
+ * @copyright 2012 Michel Corne
+ * @license   http://opensource.org/licenses/mit-license.php MIT
+ */
+
+/*
+ * Displays the algorithm examples
+ */
+?>
+
+<div class="section">
+
+  <h2>Examples</h2>
+
+  <table class="params">
+    <?php foreach($_examples as $number => $example):?>
+      <tr>
+
+        <td class="link">
+          <a href="<?="$_site_url";?>?command=calculate&run=1&algorithm=<?=$_algorithm;?>&example=<?=$number;?>">Calculate</a>
+        </td>
+
+        <td class="args">
+          <?php if (empty($example['values'])):?>
+            <span class="not-important">No argument</span>
+          <?php else:?>
+            <?=display_values_inline($example['values'], 2, ' ', true);?>
+          <?php endif;?>
+        </td>
+
+        <td class="name"><?=isset($example['reference'])? display_string($example['reference']) : null;?></td>
+
+        <td class="comment"><?=display_string($example['comment']);?></td>
+
+      </tr>
+    <?php endforeach;?>
+  </table>
+
+</div>
